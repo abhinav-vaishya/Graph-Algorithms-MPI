@@ -53,6 +53,7 @@ int main( int argc, char **argv ) {
     for(int i=start_ind;i<end_ind;i++){
         for(int j:adj[i]){
             for(int k:adj[j]){
+		if(k==i) continue;
                 num_triangles += (intersectionCount(adj[i], adj[k]) - 1);
             }
         }
